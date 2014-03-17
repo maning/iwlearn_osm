@@ -1,71 +1,185 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Iwlearn osm by maning</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="GEF IW:LEARN and OpenStreetMap Workshop<">
+	<meta name="author" content="GEF IW:LEARN and OpenStreetMap Workshop<">
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>Iwlearn osm</h1>
-        <p></p>
+	<title>GEF IW:LEARN and OpenStreetMap Workshop</title>
 
-        <p class="view"><a href="https://github.com/maning/iwlearn_osm">View the Project on GitHub <small>maning/iwlearn_osm</small></a></p>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/custom.css" rel="stylesheet">
+	<link rel="shortcut icon" href="img/favicon.png">
+
+	<!-- Add JQuery and use its getJSON method which is used to get external GeoJson files -->
+	<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+
+	<!-- Add Leaflet files used for creating online map -->
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+	<script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
+
+	<!-- load JavaScript files that allows us to add Bing imagery to Leaflet -->
+	<script src="js/bing.js"></script>
+
+	<!-- load JavaScript for sharing -->
+	<script type="text/javascript">var switchTo5x=false;</script>
+	<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+	<script type="text/javascript">stLight.options({publisher: "0570055b-fbb3-4042-b859-4738755b63a5", doNotHash: false, doNotCopy: false, hashAddressBar: true});</script>
+
+</head>
+
+<body>
+	<div class="container">
+		<div class="col-lg-3">
+			<div class="cg-sidebar" style="position:fixed">
+				<ul class="nav cg-sidenav">
+					
+					<li><a href="#intro">Introduction</a></li>              
+					<li><a href="#howtomap">How to Map</a></li>	
+					<li><a href="#challenge">Mapping Challenge</a></li>		
+					<li><a href="#howtouse">How to use the data</a></li>	
+                                        <li><a href="#resources">Other Resources</a></li>	
+
+					<br />
+					<li style="margin: 25px 0 0 15px;">
+						<div id="google_translate_element"></div>
+						<script type="text/javascript">
+							function googleTranslateElementInit() {
+								new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_RIGHT}, 'google_translate_element');
+							}
+						</script>
+						<script type="text/javascript" src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+					</li>
+					<li style="margin:5px;"><br /><em>In collaboration with:</em></li>
+					<li style="margin:5px;"><a href="http://openstreetmap.org.ph/" target="_blank"><img src="img/osmph_logo.png" style="width: 100px; height: auto;"></a>
+					<li style="margin:5px;"><a href="http://http://iwlearn.net/" target="_blank"><img src="img/iwlearn.png" style="width: 100px; height: auto;"></a>
+					<li style="margin:5px;"><a href="http://essc.org.ph/" target="_blank"><img src="img/essclogotrace_thumbnail.jpg" style="width: 100px; height: auto;"></a>
+
+					<br />
+ 
+				</ul>
+			</div>
+		</div>
+
+		<div class="col-lg-9" style="background-color:#f5f5f5;">		
+			<div class="cg-intro container" id="intro">
+				<h1>GEF IW:LEARN and OpenStreetMap Workshop</h1>
+				<p class="lead">GEF IW:LEARN Information and Communications Technology Workshop in Spatial Data Management for Asia and the Pacific (March 17-20, 2014)</p> 
+			</div>    
+			<div class="otherPlaces container">
+				<img width="100%" src="img/osm_watercolor.png" alt="Stamen Watercolor" />
+				<span class="caption">OpenStreetMap in Watercolor. Map design by <a href="<http://maps.stamen.com/watercolor/#2/49.8/-193.0" target="_blank">Stamen Design</a> under CC-BY-3.0. Data by OpenStreetMap Contributors. </span>
+				<p><a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> is a free, editable map of the whole world. OpenStreetMap volunteers have been helping many humanitarian organizations in 
+				  providing comprehensive and updated geographic data for disaster risk reduction and response.  
+				  For more information about OpenStreetMap's mapping response during Typhoon Yolanda/Haiyan, check out this
+				  <a href="http://wiki.openstreetmap.org/wiki/Typhoon_Haiyan" target="_blank">wiki</a> and   
+				  <a href="http://www.youtube.com/watch?v=C175zW8-6j8<" target="_blank">video</a>.</p>
+				 
+
+			</div>
+		<div class="chapter">
+			<div class="page-header">
+				<h1 id="howtomap">How to Map</h1>
+			</div>
+           		<h3>Editing data in OpenStreetMap</h3>
+			<p>Mapping in OpenStreetMap is as easy as these 3 steps.</p>
+				<ol>
+					<li>Set up an account and get a log in from <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a>.</li>
+				 	<li>Learn to map. Watch this video and follow the instructions.</li>
+					<br />
+					<iframe width="685" height="385" src="//www.youtube.com/embed/Ir-3K0pjwOI" frameborder="0" allowfullscreen></iframe>
+					<br />
+					<li>Start mapping! </li>
+				</ol>
+			</p>
+
+                        <h3>No time to edit the map?  Use the OpenStreetMap Notes</h3>
+			<p>OpenStreetMap Notes allows you to easily add a marker for errors or missing information in the map data. </p>
+				<ol>
+					<li>To add a note, click the bottom tool bar button on the right side of the main OSM map. </li>
+                                        <li>Leave a short message on the map if something is missing or obviously wrong. </li>
+				 	<li>An experienced mapper can use these Notes as reference to edit the map. </li>
+					<br />
+					<iframe width="685" height="385" src="//www.youtube.com/embed/8h4qWLas1rI" frameborder="0" allowfullscreen></iframe>
+					<br />
+
+				</ol>
+			</p>
+               </div>
+
+<div class="chapter">
+	<div class="page-header">
+		<h1 id="challenge">Mapping Challenge</h1>
+	</div>
+	<h3>Map your "neighborhood"</h3>
+
+	<img width="100%" src="http://wiki.openstreetmap.org/w/images/thumb/1/1a/Guagua_ESSC-OSMPH_Training_field_survey.jpg/800px-Guagua_ESSC-OSMPH_Training_field_survey.jpg" alt="Guagua OSM-PH Mapping" />
+	<span class="caption">During an disaster risk reduction OSM training held in Guagua (Pampanga, Philippines) the participants were divided into groups and did a field survey in various parts of the town. Shown in the photo is the Betis group taking down notes beside a Death March trail historical marker. Photo Credit: 
+	  <a href="http://wiki.openstreetmap.org/wiki/File:Guagua_ESSC-OSMPH_Training_field_survey.jpg" target="_blank">seav</a></span>
+
+	<p>We need to collect an updated geographic data for hospitals. For Project NOAH's research, we need to assess if hospitals are safe from hazards. 
+	  Furthermore, hospitals are critical infrastructure in times of disasters. During disaster relief and response, we need to know the location of hospitals 
+	  in order to efficiently direct aid and other medical assistance.</p> 
+	 <p>To map hospitals in OpenStreetMap:</p>
+	 <ol>
+	   <li>Browse the map to check if the hospitals in your neighborhood were already in OpenStreetMap.  You can also check this list of hospitals from the 
+	     <a href="http://uhmis2.doh.gov.ph/doh_facility/rfacilitieslist.php?pageno=1&t=rfacilities&recperpage=ALL" target="_blank">Department of Health database</a>.</li>
+           <li>Add as much detail within the hospital such as buildings, roads and other structures.</li>
+	   
+	   <li>When saving your edits, add this comment to your changeset <code>"#noah_hospitals"</code>.</li>
+	   <br />
+  	   <iframe width="685" height="385" src="//www.youtube.com/embed/1UL02DTt8pw" frameborder="0" allowfullscreen></iframe>
+	   <br />
+	 </ol>
+	</p>
 
 
-        <ul>
-          <li><a href="https://github.com/maning/iwlearn_osm/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/maning/iwlearn_osm/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/maning/iwlearn_osm">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+<h3> Current data and contributions </h3>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+      <h4>Last 7 days of edits</h4>
+      <object data="http://resultmaps.neis-one.org/osm-changesets?comment=iwlearn#2/34.0/1.2" width="100%" height="700px">
+	<embed src="http://resultmaps.neis-one.org/osm-changesets?comment=iwlearn#2/34.0/1.2" width="100%" height="700px"> </embed>
+	Error: data could not be displayed at the moment, server maybe busy.
+      </object>
+      <span class="caption">Latest edits with the changeset tag <code>"#iwlearn"</code> from <a href="http://resultmaps.neis-one.org/osm-changesets?comment=iwlearn#2/34.0/1.2" target="_blank">http://resultmaps.neis-one.org/osm-changesets</a>.</span>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+</p>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+	
+</div>	    
+<div class="chapter">
+	<div class="page-header">
+		<h1 id="howtouse">How to use the data</h1>
+	</div>
+	<ul>
+	  <li>Download map image, raw data, map embed code from OpenStreetMap website.  <a href="http://www.osm.org" target="_blank">http://www.osm.org</a></li>
+	  <li>MapOSMatic - printable street atlas.  <a href="http://www.maposmatic.org/new/" target="_blank">http://www.maposmatic.org/new/</a></li>
+	  <li>Geofabrik download – download country extracts (updated daily).  <a href="http://www.download.geofabrik.de" target="_blank">http://www.download.geofabrik.de</a></li>
+	  <li>Extract OSM tool - near-real time data extracts.  <a href="http://export.hotosm.org/" target="_blank">http://export.hotosm.org/</a> </li>
+	</ul>
+</div>
 
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+<div class="chapter">
+	<div class="page-header">
+		<h1 id="resources">Other Resources</h1>
+	</div>
+	<ul>
+	        <li><a href="http://wiki.openstreetmap.org" target="_blank">OpenStreetMap</a> is a project to create and distribute free geographic data for the world. It is being built by volunteer contributors. </li>
+		<li>Learn to contribute to OpenStreetMap at <a href="http://learnosm.org" target="_blank">http://learnosm.org</a> and <a href="http://mapgive.state.gov" target="_blank">http://mapgive.state.gov</a>
+		<li>Talk to the OpenStreetMap Philippines community (OSM-PH) by visiting <a href="http://wiki.openstreetmap.org/wiki/Philippines" target="_blank">http://wiki.openstreetmap.org/wiki/Philippines</a>, 
+		  <a href="http://lists.openstreetmap.org/listinfo/talk-ph" target="_blank">joining the mailing-list</a> and <a href="https://www.facebook.com/OSMPH" target="_blank">visiting https://www.facebook.com/OSMPH</a>.</li>
+		<li>Comments and correction on this page, go to: <a href="https://github.com/maning/noah_osm_mapping" target="_blank">https://github.com/maning/noah_osm_mapping</a>.</li>              
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+	</ul>
+</div>
+</div> <!-- close col-lg-9 -->
+</div> <!-- close body container -->
 
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+<!-- jQuery -->
+<script src="js/jquery-1.9.1.min.js"></script>
+<!-- all compiled plugins -->
+<script src="js/bootstrap.min.js"></script>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/maning">maning</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
-    </div>
-    <script src="javascripts/scale.fix.js"></script>
-    
-  </body>
+</body>  
 </html>
