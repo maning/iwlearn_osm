@@ -103,3 +103,8 @@ table#tableRecommendations td{color: rgb(77,77,77);}
 
 /* CSS for Map Captions */
 .caption {font-style: italic; text-align: left;}
+
+/* round rectangle for images */
+.roundrect {
+    border-radius: 10px;
+    }
